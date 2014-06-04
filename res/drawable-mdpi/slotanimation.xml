@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+    <item
+    android:drawable="@drawable/facebook"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/flickr"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/github"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/googleplus"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/linkedin"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/rss"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/skype"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/tumblr"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/twitter"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/vimeo"
+    android:duration="200"/>
+<item
+    android:drawable="@drawable/youtube"
+    android:duration="200"/>
+</animation-list>

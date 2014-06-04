@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mobslots</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="slot2">slot2</string>
+    <string name="slot1">slot1</string>
+    <string name="slot3">slot3</string>
+    <string name="betmax">Goods Store</string>
+    <string name="bet3">Bet Three</string>
+    <string name="bet1">Bet One</string>
+    <string name="spin">Spin</string>
+    <string name="betmaxmessage">To unlock this level, you can either buy credits, or answer a short survey provided through MobInsight \u00A9</string>
+	<string name="buycredits">Buy Credits</string>
+	<string name="mobinsight">Answer Survey</string>
+	<string name="usernamehint">user@domain.com</string>
+	<string name="passwordhint">password</string>
+	<string name="buycreditsImage">Virtual good to buy</string>
+	<string name="buycreditsMessage">Buy more credits using your stored credit card information by signing in to your account.</string>
+	<string name="surveyimage">Survey Image</string>
+	<string name="answerButton">Answer</string>
+</resources>
