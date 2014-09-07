@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,8 +16,8 @@ import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import com.mobinsight.slotmachine.R;
 
+import com.mobinsight.slotmachine.R;
 import com.mobinsight.client.Answer;
 import com.mobinsight.client.AnswerRange;
 import com.mobinsight.client.Mobinsight;
@@ -95,7 +96,7 @@ public class SurveyActivity extends Activity {
                 if (mQuestion.getAnswerType() == Question.ANSWER_TYPE_TEXT) {
                     answer = new Answer(mAnswerText.getText().toString());
                 } else if (mQuestion.getAnswerType() == Question.ANSWER_TYPE_CHOICE) {
-                    answer = new Answer(mAnswerChoice.getSelectedItemPosition());
+                    answer = new Answer(mAnswerChoice.getCheckedItemPosition());
                 } else if (mQuestion.getAnswerType() == Question.ANSWER_TYPE_RANGE) {
                     answer = new Answer((float) mAnswerRange.getProgress());
                 }
@@ -172,12 +173,14 @@ public class SurveyActivity extends Activity {
                 mAnswerText.setVisibility(View.VISIBLE);
                 mAnswerText.setText("");
             } else if (question.getAnswerType() == Question.ANSWER_TYPE_CHOICE) {
+            	int mNumChoices = question.getAnswerChoices().size();
+            	mAnswerChoice.getLayoutParams().height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mNumChoices*66, getResources().getDisplayMetrics());
                 mAnswerChoice.setVisibility(View.VISIBLE);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice,
                         question.getAnswerChoices());
                 mAnswerChoice.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
                 mAnswerChoice.setAdapter(adapter);
-                mAnswerChoice.setItemChecked(0, true);                
+                //mAnswerChoice.setItemChecked(0, true);                
             } else if (question.getAnswerType() == Question.ANSWER_TYPE_RANGE) {
                 AnswerRange range = question.getAnswerRange();
                 mAnswerRange.setMax((int) (range.mHigh - range.mLow));
